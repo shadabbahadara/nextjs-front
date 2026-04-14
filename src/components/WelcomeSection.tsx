@@ -47,7 +47,7 @@ export default function WelcomeSection() {
           <div className="relative">
             <div className="relative h-[440px] md:h-[520px] w-full">
               <Image
-                src="/images/misc/300A1694.JPG"
+                src="/images/gallery/DJI_20260325204913_0097_D.JPG"
                 alt="The Mountain Front Resort exterior"
                 fill
                 className="object-cover"

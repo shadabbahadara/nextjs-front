@@ -15,7 +15,7 @@ const experiences: Experience[] = [
     title: "Nature Walks",
     description:
       "Guided walks through the forest trails of Kaladhungi — every path reveals a new story of the wild.",
-    image: "/images/misc/300A1940.JPG",
+    image: "/images/gallery/DJI_20260325201302_0052_D.JPG",
     duration: "2–4 hrs",
     tag: "Adventure",
   },
@@ -24,7 +24,7 @@ const experiences: Experience[] = [
     title: "Bonfire Evenings",
     description:
       "Unwind under a canopy of stars with a crackling bonfire, live folk music, and warm Pahadi hospitality.",
-    image: "/images/misc/300A1950.JPG",
+    image: "/images/gallery/DJI_20260325231005_0147_D.JPG",
     duration: "2–3 hrs",
     tag: "Leisure",
   },
@@ -33,7 +33,7 @@ const experiences: Experience[] = [
     title: "Sunrise Yoga",
     description:
       "Begin each day with an open-air yoga session as golden light filters through the trees.",
-    image: "/images/misc/300A1960.JPG",
+    image: "/images/gallery/DJI_20260325201824_0060_D%20(1).JPG",
     duration: "1–2 hrs",
     tag: "Wellness",
   },
@@ -42,7 +42,7 @@ const experiences: Experience[] = [
     title: "Bird Watching",
     description:
       "The Kaladhungi forests are home to hundreds of species — a paradise for birding enthusiasts.",
-    image: "/images/misc/300A1965.JPG",
+    image: "/images/gallery/DJI_20260325204546_0086_D.JPG",
     duration: "Half Day",
     tag: "Nature",
   },
@@ -51,7 +51,7 @@ const experiences: Experience[] = [
     title: "Jungle Safari",
     description:
       "Venture into the Jim Corbett buffer zone for thrilling wildlife encounters with expert naturalists.",
-    image: "/images/misc/300A1968.JPG",
+    image: "/images/gallery/DJI_20260325232826_0170_D.JPG",
     duration: "3–5 hrs",
     tag: "Adventure",
   },
@@ -60,7 +60,7 @@ const experiences: Experience[] = [
     title: "Spa & Wellness",
     description:
       "Rejuvenate with curated spa rituals using local herbs and traditional Kumaoni healing techniques.",
-    image: "/images/misc/300A1972.JPG",
+    image: "/images/rooms/Pines%20%26%20Teak/300A1789.JPG",
     duration: "1–3 hrs",
     tag: "Wellness",
   },
