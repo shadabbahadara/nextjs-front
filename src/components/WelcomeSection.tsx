@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 const stats = [
-  { value: "52", label: "Luxury Suites" },
-  { value: "3,500m", label: "Elevation" },
+  { value: "56", label: "Luxury Accomodations" },
+  { value: "2", label: "Restaurants" },
   { value: "12", label: "Spa Rituals" },
   { value: "25+", label: "Years of Hospitality" },
 ];
@@ -24,16 +24,10 @@ export default function WelcomeSection() {
             </h2>
             <div className="w-14 h-0.5 bg-[#C9A96E] mb-8" />
             <p className="text-[#4A4A4A] text-lg leading-relaxed mb-5">
-              Nestled in the foothills of Kaladhungi near Nainital, The Mountain
+              Nestled in the foothills of Jim Corbett National Park, Ramnagar, Nainital, Uttarakhand (India), The Mountain
               Front is a retreat where nature meets contemporary elegance. Every
               detail — from the hand-crafted wood interiors to the curated
               experiences — is thoughtfully designed for your comfort.
-            </p>
-            <p className="text-[#5A5A5A] leading-relaxed mb-10 text-sm">
-              Surrounded by snow-capped peaks, emerald cedar forests, and
-              glacial rivers, our resort offers an unparalleled haven for those
-              who seek both adventure and stillness. Come, let the mountains
-              restore what the world has taken.
             </p>
             <a
               href="#rooms"
@@ -45,20 +39,19 @@ export default function WelcomeSection() {
 
           {/* Right: Stacked Images */}
           <div className="relative">
-            <div className="relative h-[440px] md:h-[520px] w-full">
+            <div className="relative w-full">
               <Image
-                src="/images/gallery/DJI_20260325204913_0097_D.JPG"
+                src="/images/gallery/aboutf.JPG"
                 alt="The Mountain Front Resort exterior"
-                fill
-                className="object-cover"
+                width={1200}
+                height={800}
+                style={{ width: "100%", height: "auto" }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              {/* Inset decorative border */}
-              <div className="absolute inset-4 border border-white/30 pointer-events-none" />
             </div>
 
             {/* Floating accent card */}
-            <div className="absolute -bottom-8 -left-8 bg-[#1B3D2F] text-white p-7 z-10">
+            {/* <div className="absolute -bottom-8 -left-8 bg-[#1B3D2F] text-white p-7 z-10">
               <div className="font-display text-4xl font-semibold leading-none">
                 25+
               </div>
@@ -67,10 +60,10 @@ export default function WelcomeSection() {
                 <br />
                 EXCELLENCE
               </div>
-            </div>
+            </div> */}
 
             {/* Floating quote card */}
-            <div className="absolute -top-6 -right-4 bg-[#C9A96E] text-white p-5 max-w-[180px] z-10 hidden md:block">
+            {/* <div className="absolute -top-6 -right-4 bg-[#C9A96E] text-white p-5 max-w-[180px] z-10 hidden md:block">
               <div className="font-display text-2xl italic leading-tight text-white/90">
                 &ldquo;5-Star
                 <br />
@@ -81,7 +74,7 @@ export default function WelcomeSection() {
               <div className="text-[9px] tracking-widest mt-2 text-white/70">
                 — Forbes Travel Guide
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

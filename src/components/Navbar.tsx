@@ -65,7 +65,7 @@ export default function Navbar() {
             className="ml-2 px-6 py-2.5 text-xs tracking-[0.15em] font-medium bg-[#C9A96E] text-white hover:bg-[#a8873e] transition-colors duration-300"
           >
             BOOK NOW
-          </a>
+          </a>  
         </div>
 
         {/* Mobile Menu Button */}

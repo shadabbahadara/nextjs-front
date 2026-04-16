@@ -169,7 +169,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Awards Bar */}
-        <div className="mt-20 border-t border-[#DDD7CE] pt-14">
+        {/* <div className="mt-20 border-t border-[#DDD7CE] pt-14">
           <p className="text-center text-[#8C7B6B] text-[10px] tracking-[0.4em] uppercase mb-10">
             Recognition &amp; Awards
           </p>
@@ -185,7 +185,7 @@ export default function TestimonialsSection() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

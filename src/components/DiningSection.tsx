@@ -1,34 +1,84 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+
 
 const restaurantImages = [
+  "/images/dining/Vayanjan%20Restaurant/dinning1.JPG",
+  "/images/dining/Vayanjan%20Restaurant/dinning2.JPG",
+  "/images/dining/Vayanjan%20Restaurant/dinning3.JPG",
+  "/images/dining/Vayanjan%20Restaurant/dinning4.JPG",
+  "/images/dining/Vayanjan%20Restaurant/dinning5.JPG",
   "/images/dining/Vayanjan%20Restaurant/300A1629.JPG",
   "/images/dining/Vayanjan%20Restaurant/300A1640.JPG",
-  "/images/dining/Vayanjan%20Restaurant/300A1826.JPG",
   "/images/dining/Vayanjan%20Restaurant/300A1914.JPG",
+  "/images/dining/Vayanjan%20Restaurant/300A1917.JPG",
+  "/images/dining/Vayanjan%20Restaurant/300A1922.JPG",
 ];
 
 const venues = [
-  { name: "Vayanjan Restaurant", type: "Multi-Cuisine Restaurant", hours: "7am – 10:30pm" },
+  { name: "Vayanjan Restaurant", type: "Multi-Cuisine Restaurant", hours: "7 AM – 11 PM" },
 ];
 
 export default function DiningSection() {
+  const [active, setActive] = useState(0);
+
+  const prev = () => setActive((i) => (i === 0 ? restaurantImages.length - 1 : i - 1));
+  const next = () => setActive((i) => (i === restaurantImages.length - 1 ? 0 : i + 1));
+
   return (
     <section id="dining" className="bg-[#F8F4ED]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
-          {/* Image Side - 2x2 photo collage */}
-          <div className="grid grid-cols-2 h-[420px] lg:h-auto min-h-[500px] gap-1">
+          {/* Image Side - Slider */}
+          <div className="relative h-[420px] lg:h-[600px] min-h-[420px] overflow-hidden">
             {restaurantImages.map((img, i) => (
-              <div key={i} className="relative overflow-hidden">
+              <div
+                key={i}
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  i === active ? "opacity-100 z-10" : "opacity-0 z-0"
+                }`}
+              >
                 <Image
                   src={img}
                   alt={`Vayanjan Restaurant photo ${i + 1}`}
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             ))}
+
+            {/* Prev / Next arrows */}
+            <button
+              onClick={prev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 text-white w-9 h-9 flex items-center justify-center transition-colors"
+              aria-label="Previous image"
+            >
+              &#8592;
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 text-white w-9 h-9 flex items-center justify-center transition-colors"
+              aria-label="Next image"
+            >
+              &#8594;
+            </button>
+
+            {/* Dot indicators */}
+            <div className="absolute bottom-4 left-0 right-0 z-20 flex justify-center gap-1.5">
+              {restaurantImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === active ? "bg-white w-4" : "bg-white/50 w-1.5"
+                  }`}
+                  aria-label={`Go to image ${i + 1}`}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Text Side */}

@@ -20,7 +20,7 @@ const rooms: Room[] = [
     name: "Pebbles Cottage",
     category: "Cottage",
     description:
-      "A charming stone cottage nestled amidst the lush gardens of The Mountain Front. The natural pebble facade, warm interiors, and private verandah create an intimate retreat for those who treasure the calm of the countryside.",
+      "A charming stone cottage nestled amidst the lush gardens of The Mountain Front. The natural pebble facade, warm interiors, and private balcony create an intimate retreat for those who treasure the calm of the countryside.",
     images: [
       "/images/rooms/Pebbles%20Cottage/300A1535.JPG",
       "/images/rooms/Pebbles%20Cottage/300A1543.JPG",
@@ -33,14 +33,14 @@ const rooms: Room[] = [
     name: "Pines & Teak",
     category: "Suite",
     description:
-      "Surrounded by towering pine trees and crafted from fine teak wood, this suite is a celebration of natural elegance. Warm tones, handcrafted furniture, and forest vistas create a space that is both luxurious and deeply rooted in nature.",
+      "Surrounded by towering trees. This suite is a celebration of natural elegance, Warm tones, handcrafted furniture, and forest vistas create a space that is both luxurious and deeply rooted in nature.",
     images: [
       "/images/rooms/Pines%20%26%20Teak/300A1789.JPG",
       "/images/rooms/Pines%20%26%20Teak/300A1800.JPG",
       "/images/rooms/Pines%20%26%20Teak/300A1805.JPG",
       "/images/rooms/Pines%20%26%20Teak/300A1816.JPG",
     ],
-    amenities: ["Forest View", "Teak Interiors", "King Bed", "Rain Shower"],
+    amenities: ["Forest View", "Queen Bed", "Rain Shower", "Fridge"],
   },
 ];
 

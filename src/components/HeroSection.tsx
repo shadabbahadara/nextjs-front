@@ -37,7 +37,7 @@ export default function HeroSection() {
       {/* Main Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-24">
         <p className="text-[#E8D5A3] text-[10px] tracking-[0.5em] mb-5 font-light">
-          KALADHUNGI · NAINITAL · UTTARAKHAND · INDIA
+          JIM CORBETT NATIONAL PARK, RAMNAGAR · NAINITAL · UTTARAKHAND · INDIA
         </p>
 
         <h1 className="font-display text-white font-semibold leading-none mb-2">
