@@ -61,7 +61,9 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="#booking"
+            href="https://analysishms.com/hotels/163"
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 px-6 py-2.5 text-xs tracking-[0.15em] font-medium bg-[#C9A96E] text-white hover:bg-[#a8873e] transition-colors duration-300"
           >
             BOOK NOW
@@ -99,7 +101,9 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="#booking"
+              href="https://analysishms.com/hotels/163"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-4 px-6 py-3 text-xs tracking-[0.15em] text-center font-medium bg-[#C9A96E] text-white hover:bg-[#a8873e] transition-colors"
               onClick={() => setMobileOpen(false)}
             >

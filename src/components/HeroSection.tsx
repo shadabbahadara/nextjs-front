@@ -133,10 +133,15 @@ export default function HeroSection() {
             </div>
 
             {/* CTA */}
-            <button className="flex items-center justify-center gap-2 bg-[#C9A96E] hover:bg-[#a8873e] text-white px-4 py-3 text-xs tracking-[0.2em] font-medium transition-colors duration-300 mt-auto">
+            <a
+              href="https://analysishms.com/hotels/163"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-[#C9A96E] hover:bg-[#a8873e] text-white px-4 py-3 text-xs tracking-[0.2em] font-medium transition-colors duration-300 mt-auto"
+            >
               <Search size={14} />
               CHECK AVAILABILITY
-            </button>
+            </a>
           </div>
         </div>
       </div>
