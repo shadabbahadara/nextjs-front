@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const galleryImages = [
   { src: "/images/gallery/300A1607.JPG", alt: "The Mountain Front" },
@@ -44,12 +44,32 @@ const galleryImages = [
 
 export default function GallerySection() {
   const [active, setActive] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const prev = () => setActive((i) => (i === 0 ? galleryImages.length - 1 : i - 1));
   const next = () => setActive((i) => (i === galleryImages.length - 1 ? 0 : i + 1));
 
+  useEffect(() => {
+    let timer: ReturnType<typeof setInterval> | null = null;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          timer = setInterval(() => setActive((i) => (i === galleryImages.length - 1 ? 0 : i + 1)), 5000);
+        } else {
+          if (timer) clearInterval(timer);
+        }
+      },
+      { threshold: 0.4 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => {
+      observer.disconnect();
+      if (timer) clearInterval(timer);
+    };
+  }, []);
+
   return (
-    <section id="gallery" className="bg-white py-24 px-6">
+    <section ref={sectionRef} id="gallery" className="bg-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">

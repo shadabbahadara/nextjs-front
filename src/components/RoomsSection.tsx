@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Mountain, Bath, Coffee, Wifi } from "lucide-react";
 import type { ReactNode } from "react";
@@ -56,9 +56,29 @@ const amenityIcons: Record<string, ReactNode> = {
 
 function RoomCard({ room }: { room: Room }) {
   const [activeImg, setActiveImg] = useState(0);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setInterval> | null = null;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          timer = setInterval(() => setActiveImg((i) => (i === room.images.length - 1 ? 0 : i + 1)), 5000);
+        } else {
+          if (timer) clearInterval(timer);
+        }
+      },
+      { threshold: 0.4 }
+    );
+    if (cardRef.current) observer.observe(cardRef.current);
+    return () => {
+      observer.disconnect();
+      if (timer) clearInterval(timer);
+    };
+  }, [room.images.length]);
 
   return (
-    <div className="group overflow-hidden border border-[#EDE8E0] hover:border-[#C9A96E] transition-colors duration-300">
+    <div ref={cardRef} className="group overflow-hidden border border-[#EDE8E0] hover:border-[#C9A96E] transition-colors duration-300">
       {/* Main Image */}
       <div className="relative h-72 md:h-80 overflow-hidden">
         <Image

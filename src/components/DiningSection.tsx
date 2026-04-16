@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 
 const restaurantImages = [
@@ -23,12 +23,32 @@ const venues = [
 
 export default function DiningSection() {
   const [active, setActive] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const prev = () => setActive((i) => (i === 0 ? restaurantImages.length - 1 : i - 1));
   const next = () => setActive((i) => (i === restaurantImages.length - 1 ? 0 : i + 1));
 
+  useEffect(() => {
+    let timer: ReturnType<typeof setInterval> | null = null;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          timer = setInterval(() => setActive((i) => (i === restaurantImages.length - 1 ? 0 : i + 1)), 5000);
+        } else {
+          if (timer) clearInterval(timer);
+        }
+      },
+      { threshold: 0.4 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => {
+      observer.disconnect();
+      if (timer) clearInterval(timer);
+    };
+  }, []);
+
   return (
-    <section id="dining" className="bg-[#F8F4ED]">
+    <section ref={sectionRef} id="dining" className="bg-[#F8F4ED]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
           {/* Image Side - Slider */}
