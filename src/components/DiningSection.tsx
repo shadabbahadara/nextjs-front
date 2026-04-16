@@ -12,7 +12,6 @@ const restaurantImages = [
   "/images/dining/Vayanjan%20Restaurant/dinning5.JPG",
   "/images/dining/Vayanjan%20Restaurant/300A1629.JPG",
   "/images/dining/Vayanjan%20Restaurant/300A1640.JPG",
-  "/images/dining/Vayanjan%20Restaurant/300A1914.JPG",
   "/images/dining/Vayanjan%20Restaurant/300A1917.JPG",
   "/images/dining/Vayanjan%20Restaurant/300A1922.JPG",
 ];
